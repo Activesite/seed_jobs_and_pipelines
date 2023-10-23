@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 
-pipelineJob('k8s-e2e-activesite nx test') {
-    displayName('Kubernetes Plugin Activesite E2E Nx Test')
+pipelineJob('k8s-e2e-activesite git test') {
+    displayName('Kubernetes Plugin Activesite E2E Git Test')
 
     logRotator {
         numToKeep(10)
