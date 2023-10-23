@@ -6,14 +6,15 @@ def workspace = "${home}/workspace/build-jenkins-operator"
 def workdir = "${workspace}/src/github.com/jenkinsci/kubernetes-operator/"
 
 podTemplate(label: label,
-        containers: [
-                containerTemplate(name: 'alpine', image: 'alpine:3.11', ttyEnabled: true, command: 'cat'),
+        containers: [ 
+                containerTemplate(name: 'alpine', image: 'alpine:3.11', ttyEnabled: true, command: 'cat',workingDir: workdir),
         ],
         ) {
     node(label) {
         stage('Run shell') {
             container('alpine') {
                 sh 'echo "hello world from activesite"'
+                sh 'pwd'
             }
         }
     }
