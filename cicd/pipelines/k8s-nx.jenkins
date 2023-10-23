@@ -17,7 +17,7 @@ podTemplate(label: label,
                 sh 'pwd'
                 sh 'ls'
                 sh 'cd ..'
-                sh 'cat helloworld'txt'
+                sh 'cat helloworld.txt'
             }
         }
     }
